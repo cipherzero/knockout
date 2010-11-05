@@ -1,4 +1,3 @@
-
 ko.utils = new (function () {
     var stringTrimRegex = /^(\s|\u00A0)+|(\s|\u00A0)+$/g;
     var isIe6 = /MSIE 6/i.test(navigator.userAgent);
@@ -61,8 +60,7 @@ ko.utils = new (function () {
         },
         
         arrayPushAll: function (array, valuesToPush) {
-            for (var i = 0, j = valuesToPush.length; i < j; i++)
-                array.push(valuesToPush[i]);	
+            array.push.apply(array,valuesToPush);
         },
 
         emptyDomNode: function (domNode) {
